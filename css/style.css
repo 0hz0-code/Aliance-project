@@ -323,3 +323,33 @@ body {
     border-bottom: 1px solid #4a90e2;
     padding-bottom: 2px;
 }
+
+.header {
+    background-color: transparent;
+    padding: 15px 0;
+    position: fixed;
+    /* изменено на fixed */
+    width: 100%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    /* плавное изменение фона */
+}
+
+.header.scrolled {
+    background-color: white;
+}
+
+.header.scrolled .nav a,
+.header.scrolled .phone {
+    color: black;
+    /* Меняем цвет текста на черный */
+}
+
+.header.scrolled .button {
+    background-color: #007bff;
+    color: white;
+}
+
+.header.scrolled .button:hover {
+    background-color: #0056b3;
+}
