@@ -353,3 +353,30 @@ body {
 .header.scrolled .button:hover {
     background-color: #0056b3;
 }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: white;
+}
+
+.header.scrolled .nav a,
+.header.scrolled .phone {
+    color: black;
+}
+
+.header.scrolled .button {
+    background-color: #007bff;
+    color: white;
+}
+
+.header.scrolled .button:hover {
+    background-color: #0056b3;
+}
