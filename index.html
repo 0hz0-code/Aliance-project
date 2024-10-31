@@ -4,99 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href=" https://fonts.googleapis.com " />
+    <link rel="preconnect" href=" https://fonts.gstatic.com " crossorigin />
+    <link href=" https://fonts.googleapis.com/css2?family=Noto +Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Aliance Production</title>
 </head>
 
 <body>
-    <header class="header">
+
+    <header class="header header-image">
+        <nav class="navbar">
+            <a href="./" class="header-logo">
+                <img class="logo-light" src="./img/logo-light.svg" alt="Aliance Production">
+            </a>
+            <ul class="header-nav">
+                <li class="header-nav-item"><a href="" class="header-nav-link">О компании</a></li>
+                <li class="header-nav-item"><a href="" class="header-nav-link">Контрактное производство</a></li>
+                <li class="header-nav-item"><a href="" class="header-nav-link">Собственные торговые марки</a></li>
+                <li class="header-nav-item"><a href="" class="header-nav-link">Новости</a></li>
+                <li class="header-nav-item"><a href="" class="header-nav-link">Контакты</a></li>
+            </ul>
+            <div class="header-phone">
+                <img src="img/phone.svg" alt="icon: phone">
+                <a href="tel:+74996861014" class="header-phone-link">
+                    +7 (499) 686-10-14
+
+                </a>
+            </div>
+            <button class="navbar-button button">Получить консультацию</button>
+        </nav>
         <div class="container">
-            <div class="logo">
-                <img src="./img/log0.png" alt="Logo">
+            <div class="header-content">
+                <div class="seporator"></div>
+                <h1 class="header-title">
+                    Комплексно обеспечение товарами и расходными материалами бизнеса
+                </h1>
+                <p class="header-text">
+                    Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого
+                    факта: высококачественный прототип будущего проекта напрямую зависит от анализа существующих
+                    паттернов поведения.
+                </p>
+                <div class="button">Подробнее о компании</div>
             </div>
-            <nav class="nav">
-                <a href="#">О компании</a>
-                <a href="#">Контрактное производство</a>
-                <a href="#">Собственные торговые марки</a>
-                <a href="#">Новости</a>
-                <a href="#">Контакты</a>
-            </nav>
-            <div class="contacts">
-                <a href="tel:+74996861014" class="phone">+7 (499) 686-10-14</a>
-                <button class="button">Получить консультацию</button>
-            </div>
+            <ul class="header-features">
+                <li class="header-features-item">
+                    <img src="img/features/time.svg" alt="" class="header-features-icon">
+                    <p class="header-features-text">Непрерывная работа c 2017 года</p>
+                </li>
+                <li class="header-features-item">
+                    <img src="img/features/certificate.svg" alt="" class="header-features-icon">
+                    <p class="header-features-text">Вся продукция сертифицирована</p>
+                </li>
+                <li class="header-features-item">
+                    <img src="img/features/control.svg" alt="" class="header-features-icon">
+                    <p class="header-features-text">Контроль качества на всех этапах</p>
+                </li>
+                <li class="header-features-item">
+                    <img src="img/features/delivery.svg" alt="" class="header-features-icon">
+                    <p class="header-features-text">Возможны поставки по всей России</p>
+                </li>
+                <li class="header-features-item">
+                    <img src="img/features/speed.svg" alt="" class="header-features-icon">
+                    <p class="header-features-text">Оперативное производство</p>
+                </li>
+            </ul>
         </div>
     </header>
 
-    <main class="content">
-        <section class="hero">
-            <div class="overlay"></div>
-            <div class="hero-text">
-                <h1>Комплексное обеспечение товарами и расходными материалами бизнеса</h1>
-                <p>Высокий уровень вовлечения представителей целевой аудитории и разветвлённая сеть доказательства
-                    простого факта: высококачественный прототип будущего проекта напрямую зависит от анализа
-                    существующих паттернов поведения.</p>
-                <a href="#" class="button">Подробнее о компании</a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <div class="feature">
-                    <img src="./img/Vector.png" alt="Непрерывная работа с 2017 года">
-                    <p>Непрерывная работа с 2017 года</p>
-                </div>
-                <div class="feature">
-                    <img src="./img/Vector 1.png" alt="Вся продукция сертифицирована">
-                    <p>Вся продукция сертифицирована</p>
-                </div>
-                <div class="feature">
-                    <img src="./img/Vector 2.png" alt="Контроль качества на всех этапах">
-                    <p>Контроль качества на всех этапах</p>
-                </div>
-                <div class="feature">
-                    <img src="./img/Frame 35.png" alt="Возможность поставки по всей России">
-                    <p>Возможность поставки по всей России</p>
-                </div>
-                <div class="feature">
-                    <img src="./img/Frame 37.png" alt="Оперативное производство">
-                    <p>Оперативное производство</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="part-1">
-            <div class="title">СХЕМА РАБОТЫ</div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-title">Знакомство</div>
-                    <div class="step-description">Безусловно, сплочённость команды профессионалов позволяет оценить
-                        значение форм воздействия.</div>
-                    <a href="#" class="step-link">Оставить заявку</a>
-                </div>
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-title">Заключение договора</div>
-                    <div class="step-description">Лишь интерактивные прототипы призваны к ответу.</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <div class="step-title">Производство</div>
-                    <div class="step-description">А также стремящиеся вытеснить традиционное производство,
-                        нанотехнологии функционально разнесены на независимые элементы.</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">04</div>
-                    <div class="step-title">Доставка</div>
-                    <div class="step-description">В частности, экономическая повестка сегодняшнего дня говорит о
-                        возможностях приоритизации разума над эмоциями.</div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <script src="./js/main.js"></script>
 </body>
-<script src="/js/main.js"></script>
 
 </html>

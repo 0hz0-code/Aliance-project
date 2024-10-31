@@ -1,382 +1,164 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #fff;
+@font-face {
+    font-family: 'Bebas Neue Book';
+    src: url('../fonts/BebasNeueBook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.header {
-    background-color: transparent;
-    padding: 15px 0;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
+body {
+    font-family: "Noto Sans", sans-serif;
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1440px;
+    margin: auto;
 }
 
-.logo img {
-    width: 150px;
-}
-
-.nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 16px;
-}
-
-.nav a:hover {
-    text-decoration: underline;
-}
-
-.contacts {
+.navbar {
     display: flex;
     align-items: center;
-}
-
-.phone {
     color: #fff;
-    font-size: 16px;
-    margin-right: 15px;
+    height: 94px;
+    position: relative;
+    border-bottom: 1px solid rgba(235, 235, 240, 0.2);
 }
 
-.button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
+.header {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.button:hover {
-    background-color: #0056b3;
-}
-
-.content {
+.header-image {
+    background-image: url('../img/header-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
 }
 
-.hero {
-    position: relative;
-    height: 100vh;
-    background: url('../img/factory.jpg.jfif') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.overlay {
+.header-image::before {
+    content: "";
     position: absolute;
+    background-color: rgba(41, 45, 51, 0.6);
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
 }
 
-.hero-text {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
+.header-logo {
+    padding: 25px 50px;
+    border-right: 1px solid rgba(235, 235, 240, 0.2);
+    height: 100%;
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.hero-text .button {
-    padding: 15px 30px;
-    font-size: 18px;
-}
-
-* {
+.header-nav {
+    display: flex;
+    flex-basis: 100%;
+    list-style: none;
+    padding: 0 50px;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #fff;
-}
-
-.header {
-    background-color: transparent;
-    padding: 15px 0;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    width: 150px;
-}
-
-.nav a {
-    color: #fff;
+.header-nav-link {
     text-decoration: none;
-    margin: 0 20px;
     font-size: 16px;
+    margin-right: 50px;
+    color: inherit;
 }
 
-.nav a:hover {
-    text-decoration: underline;
-}
-
-.contacts {
+.header-phone {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
+    gap: 10px;
+    margin-right: 50px;
 }
 
-.phone {
-    color: #fff;
-    font-size: 16px;
-    margin-right: 15px;
+.header-phone-link {
     text-decoration: none;
+    font-size: 16px;
+    color: inherit;
 }
 
 .button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
+    font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-
-.content {
-    position: relative;
-}
-
-.hero {
-    position: relative;
-    height: 100vh;
-    background: url('../img/factory.jpg.jfif') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
-
-.hero-text h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.hero-text .button {
-    padding: 15px 30px;
-    font-size: 18px;
-}
-
-.features {
-    padding: 40px 0;
-    transform: translateY(-150px);
-}
-
-.feature {
-    text-align: center;
-    margin-bottom: 20px;
-    width: 180px;
-}
-
-.feature img {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 10px;
-}
-
-.feature p {
-    font-size: 14px;
-    color: white;
-}
-
-.features .container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.part-1 {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    transform: translateY(-150px);
-}
-
-.title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    position: relative;
+    line-height: 160%;
+    color: #ffffff;
+    background: #3a71d1;
+    padding: 25px 60px;
+    border: none;
     display: inline-block;
-    margin-left: 20px;
-    color: #000000c7;
+    cursor: pointer;
 }
 
-.title::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 60px;
+.navbar-button {
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.header-button {
+    height: 100%;
+}
+
+.seporator {
+    background: #5c8ee6;
+    width: 150px;
     height: 2px;
-    background-color: #4a90e2;
 }
 
-.steps {
+.header-content {
+    padding-top: 150px;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.header-title {
+    max-width: 1080px;
+    font-family: "Bebas Neue Book";
+    font-size: 80px;
+    line-height: 120%;
+    margin: 30px 0;
+}
+
+.header-text {
+    max-width: 720px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    margin-bottom: 50px;
+}
+
+.header-features {
     display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+    min-height: 168px;
+    padding: 0;
+    margin-top: 100px;
+    list-style: none;
+    color: #fff;
+    position: relative;
 }
 
-.step {
-    width: 22%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left;
+.header-features-item {
+    padding: 30px 50px;
+    border: 1px solid rgba(235, 235, 240, 0.2);
 }
 
-.step-number {
-    font-size: 36px;
-    font-weight: 700;
-    color: #4a90e2;
-    margin-bottom: 10px;
-}
-
-.step-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.step-description {
+.header-features-text {
+    font-weight: 400;
     font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
+    line-height: 160%;
 }
 
-.step-link {
-    font-size: 16px;
-    color: #4a90e2;
-    text-decoration: none;
-    border-bottom: 1px solid #4a90e2;
-    padding-bottom: 2px;
-}
-
-.header {
-    background-color: transparent;
-    padding: 15px 0;
-    position: fixed;
-    /* изменено на fixed */
-    width: 100%;
-    z-index: 10;
-    transition: background-color 0.3s ease;
-    /* плавное изменение фона */
-}
-
-.header.scrolled {
-    background-color: white;
-}
-
-.header.scrolled .nav a,
-.header.scrolled .phone {
-    color: black;
-    /* Меняем цвет текста на черный */
-}
-
-.header.scrolled .button {
-    background-color: #007bff;
-    color: white;
-}
-
-.header.scrolled .button:hover {
-    background-color: #0056b3;
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-}
-
-.header.scrolled {
-    background-color: white;
-}
-
-.header.scrolled .nav a,
-.header.scrolled .phone {
-    color: black;
-}
-
-.header.scrolled .button {
-    background-color: #007bff;
-    color: white;
-}
-
-.header.scrolled .button:hover {
-    background-color: #0056b3;
+.header-features-item:not(:last-child) {
+    border-right: none;
 }
