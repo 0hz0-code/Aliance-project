@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "Bebas Neue Book";
-    src: url('../fonts/BebasNeueBook.woff') format('woff');
+    src: url("../fonts/BebasNeueBook.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -21,11 +21,11 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    color: #fff;
+    color: rgb(255, 255, 255);
     height: 94px;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     z-index: 2;
     width: 100%;
     border-bottom: 1px solid rgba(235, 235, 240, 0.2);
@@ -33,13 +33,13 @@ body {
 }
 
 .navbar-light {
-    background-color: #fff;
-    color: #292d33;
+    background-color: rgb(255, 255, 255);
+    color: rgb(41, 45, 51);
     height: 74px;
 }
 
 .navbar-light .header-logo-path {
-    fill: #292d33;
+    fill: rgb(41, 45, 51);
 }
 
 .header {
@@ -48,19 +48,19 @@ body {
 }
 
 .header-image {
-    background-image: url('../img/header-bg.jpg');
+    background-image: url("../img/header-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     position: relative;
+    height: 5px;
 }
 
 .header-image::before {
     content: "";
     position: absolute;
-    background-color: rgba(41, 45, 51, 0.6);
-    top: 0;
-    left: 0;
+    background-color: rgba(41, 45, 51, 0.75);
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -78,8 +78,8 @@ body {
     display: flex;
     flex-basis: 100%;
     list-style: none;
-    padding: 0 50px;
-    margin: 0;
+    padding: 0px 50px;
+    margin: 0px;
 }
 
 .header-nav-link {
@@ -101,14 +101,15 @@ body {
     text-decoration: none;
     font-size: 16px;
     color: inherit;
+    transform: translate(8px, 1.5px);
 }
 
 .button {
     font-weight: 600;
     font-size: 16px;
     line-height: 160%;
-    color: #ffffff;
-    background: #3a71d1;
+    color: rgb(255, 255, 255);
+    background: rgb(58, 113, 209);
     padding: 25px 60px;
     border: none;
     display: inline-block;
@@ -118,6 +119,7 @@ body {
 .navbar-button {
     flex-shrink: 0;
     height: 100%;
+    padding: 25px 50px;
 }
 
 .header-button {
@@ -125,7 +127,7 @@ body {
 }
 
 .seporator {
-    background: #5c8ee6;
+    background: rgb(92, 142, 230);
     width: 150px;
     height: 2px;
 }
@@ -134,7 +136,7 @@ body {
     padding-top: 150px;
     position: relative;
     z-index: 1;
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 
 .header-title {
@@ -142,7 +144,10 @@ body {
     font-family: "Bebas Neue Book";
     font-size: 80px;
     line-height: 120%;
-    margin: 30px 0;
+    margin: 30px 0px;
+    letter-spacing: 0.8px;
+    word-spacing: -1.6px;
+    transform: translate(10px, -5px);
 }
 
 .header-text {
@@ -152,28 +157,37 @@ body {
     font-size: 16px;
     line-height: 160%;
     margin-bottom: 50px;
+    transform: translate(10px, 1px);
 }
 
 .header-features {
     display: flex;
     min-height: 168px;
-    padding: 0;
-    margin-top: 100px;
+    padding: 0px;
+    margin-top: 102px;
     list-style: none;
-    color: #fff;
+    color: rgb(255, 255, 255);
     position: relative;
 }
 
 .header-features-item {
-    padding: 30px 50px;
+    padding: 28px 50px;
+    width: 288px;
     border: 1px solid rgba(235, 235, 240, 0.2);
-    transform: translateY(110px);
+    transform: translate(9px, -1px);
+}
+
+.header-button {
+    padding: 26px 70px;
+    transform: translateX(10px);
 }
 
 .header-features-text {
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
+    margin-bottom: 0px;
+    margin-top: 18px;
 }
 
 .header-features-item:not(:last-child) {
@@ -183,24 +197,26 @@ body {
 .section {
     margin-top: 150px;
     margin-bottom: 150px;
+    transform: translate(7px, -20px);
 }
 
 .section-title {
     font-family: "Bebas Neue Book";
     font-size: 60px;
     line-height: 120%;
-    color: #292d33;
+    color: rgb(41, 45, 51);
 }
 
 .steps {
     display: flex;
     list-style: none;
-    padding: 0;
+    padding: 0px;
     gap: 70px;
 }
 
 .steps-item {
-    max-width: 330px;
+    max-width: 290px;
+    transform: translateY(5px);
 }
 
 .steps-num {
@@ -208,15 +224,15 @@ body {
     font-weight: 400;
     font-size: 48px;
     line-height: 120%;
-    color: #5c8ee6;
+    color: rgb(92, 142, 230);
     display: flex;
     align-items: center;
 }
 
-.steps-num:after {
+.steps-num::after {
     content: "";
     height: 1px;
-    background: #ebebf0;
+    background: rgb(235, 235, 240);
     width: 100%;
     margin-left: 30px;
 }
@@ -225,16 +241,17 @@ body {
     font-weight: 400;
     font-size: 28px;
     line-height: 160%;
-    color: #292d33;
+    color: rgb(41, 45, 51);
     margin-top: 30px;
     margin-bottom: 10px;
+    transform: translateY(5px);
 }
 
 .steps-text {
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
-    color: #828a99;
+    color: rgb(130, 138, 153);
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -246,13 +263,13 @@ body {
     font-weight: 600;
     font-size: 16px;
     line-height: 160%;
-    color: #5c8ee6;
+    color: rgb(92, 142, 230);
 }
 
-.steps-link:before {
+.steps-link::before {
     content: "";
     height: 1px;
-    background: #5c8ee6;
+    background: rgb(92, 142, 230);
     width: 40px;
     margin-right: 20px;
 }
