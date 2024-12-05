@@ -106,7 +106,7 @@ body {
     align-items: center;
     gap: .625rem;
     margin-right: 4.6rem;
-    transform: translate(25px, 1.5PX);
+    transform: translate(25px, 2px);
 }
 
 .header-phone-link {
@@ -143,10 +143,10 @@ body {
     display: inline-block;
     cursor: pointer;
     text-align: center;
-    height: 92px;
+    height: 80px;
     width: 455px;
     transition: background-color 0.3s ease;
-    transform: translatex(2px);
+    transform: translate(6px, -0.2px);
 }
 
 .header-button {
@@ -174,6 +174,7 @@ body {
     position: relative;
     z-index: 1;
     color: rgb(255, 255, 255);
+    transform: translate(-135px, -0px);
 }
 
 .header-title {
@@ -205,7 +206,7 @@ body {
     list-style: none;
     color: rgb(255, 255, 255);
     position: relative;
-    transform: translate(-1.5px, -3.5px);
+    transform: translate(-140px, -3.5px);
 }
 
 .header-features-item {
@@ -238,7 +239,7 @@ body {
 .section {
     margin-top: 9.375rem;
     margin-bottom: 9.375rem;
-    transform: translate(15px, -3px);
+    transform: translate(-190px, 80px);
 }
 
 .section-title {
@@ -319,69 +320,77 @@ body {
 
 @media (max-width: 1920px) and (min-width: 1200px) {
 
-    /* Основной контейнер */
-    .container {
-        max-width: 100%;
-        margin: 0 auto;
-    }
+    .navbar {
 
-    /* Основной текст */
-    p {
-        font-size: 1rem;
-
-        line-height: 1.6;
+        height: 5rem;
 
     }
 
-}
 
-/* Логотип */
-.logo {
-    max-width: 150px;
+    .logo-svg {
 
-    height: auto;
-}
+        width: 7rem;
 
+        height: 2rem;
 
-.nav {
-    gap: 1rem;
-
-}
-
-/* Иконки */
-.icon {
-    width: 32px;
-
-    height: 32px;
-}
+    }
 
 
-.section {
-    padding: 2rem 1.5rem;
+    .header {
 
-}
+        padding: 4rem;
+
+    }
 
 
-.card {
-    margin: 1rem;
+    .header-title {
 
-    padding: 1rem;
+        font-size: 5rem;
 
-    font-size: 0.9rem;
+    }
 
-}
 
-/* Footer */
-footer {
-    padding: 1.5rem;
+    .header-text {
 
-    font-size: 0.8rem;
+        font-size: 0.9rem;
 
-}
+    }
 
-/* Изображения */
-img {
-    max-width: 100%;
 
-    height: auto;
+    .header-features-item {
+
+        padding: 1rem 2rem;
+
+        width: 15rem;
+
+    }
+
+
+    .section-title {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    .steps-num {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    .steps-title {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    .steps-text {
+
+        font-size: 0.9rem;
+
+    }
+
 }
