@@ -157,6 +157,10 @@ body {
     transform: translate(6px, -0.2px);
 }
 
+.navbar-button .button-icon {
+    display: none;
+}
+
 .header-button {
     height: 100%;
 }
@@ -576,13 +580,5 @@ body {
         font-size: 14px;
         line-height: 160%;
         color: #292d33;
-    }
-
-    .mobile-address-mail {
-        fill: #5C8EE6;
-    }
-
-    .mobile-social {
-        fill: #5C8EE6;
     }
 }
