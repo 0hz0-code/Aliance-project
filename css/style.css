@@ -581,4 +581,12 @@ body {
         line-height: 160%;
         color: #292d33;
     }
+
+    .mobile-social-inst {
+        transform: translate(45px, 1px);
+    }
+
+    .mobile-social-vk {
+        transform: translateY(-35px);
+    }
 }
