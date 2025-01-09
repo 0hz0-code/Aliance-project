@@ -242,6 +242,7 @@ body {
     display: flex;
     align-items: center;
     justify-self: center;
+    cursor: pointer;
 }
 
 .header-button {
