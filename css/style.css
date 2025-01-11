@@ -231,17 +231,19 @@ body {
 
 .slider-buttons {
     display: none;
+    justify-content: space-between;
     height: 44px;
+    width: 100%;
 }
 
-.slider-buttons-prev,
-.slider-buttons-next {
+.slider-button-prev,
+.slider-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     flex-basis: 50%;
     border: 1px solid rgba(235, 235, 240, 0.2);
-    display: flex;
-    align-items: center;
-    justify-self: center;
     cursor: pointer;
 }
 
@@ -259,10 +261,6 @@ body {
     margin-bottom: 0;
     margin-top: 1.125rem;
     transform: translate(-2px, -5px);
-}
-
-.header-features-item:not(:last-child) {
-    border-right: none;
 }
 
 .section {
@@ -289,7 +287,7 @@ body {
 
 .steps-item {
     max-width: 18.125rem;
-    transform: translateY(10px);
+    transform: translate(-155px, -20px);
 }
 
 .steps-num {
@@ -347,7 +345,24 @@ body {
     margin-right: 1.25rem;
 }
 
-@media (max-width: 1920px) and (min-width: 1200px) {
+.steps-button {
+    display: none;
+    height: 40px;
+    justify-content: flex-end;
+}
+
+.steps-button-prev,
+.steps-button-next {
+    background: #5c8ee6;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media (max-width: 1920px) {
 
     .navbar {
 
@@ -422,10 +437,6 @@ body {
 
     }
 
-    .slider-buttons {
-        display: flex;
-    }
-
 }
 
 @media (max-width: 1670px) {
@@ -451,6 +462,11 @@ body {
 
     .navbar-button {
         transform: translateY(-7px);
+    }
+
+    .steps-item {
+        max-width: 18.125rem;
+        transform: translate(-85px, -20px);
     }
 }
 
@@ -495,6 +511,14 @@ body {
         transform: translate(0px, 0px);
         height: 60px;
         width: 70px;
+    }
+
+    .slider-buttons {
+        display: flex;
+    }
+
+    .steps-button {
+        display: flex;
     }
 }
 
@@ -648,6 +672,11 @@ body {
 
     .close-menu .mobile-menu-line:nth-child(3) {
         transform: rotate(-45deg) translateY(-9px);
+    }
+
+    .steps-item {
+        max-width: 18.125rem;
+        transform: translate(-65px, -20px);
     }
 }
 
