@@ -90,6 +90,8 @@ body {
 
 .header-nav {
     display: flex;
+    align-items: center;
+    height: 100%;
     flex-basis: 100%;
     list-style: none;
     padding: 0;
@@ -98,14 +100,42 @@ body {
     gap: 30.5px;
 }
 
+.header-nav-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .header-nav-item:not(:last-child) {
     margin-right: 2%;
 }
 
 .header-nav-link {
+    display: flex;
+    height: 100%;
+    align-items: center;
     text-decoration: none;
     font-size: 1.0625rem;
     color: inherit;
+    position: relative;
+}
+
+.header-nav-link:after {
+    content: "";
+    width: 0px;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    background-color: #5c8ee6;
+    transition: width 0.2s;
+    right: 0;
+    left: auto;
+}
+
+.header-nav-link:hover::after {
+    width: 100%;
+    right: auto;
+    left: 0;
 }
 
 .header-phone {
@@ -283,12 +313,11 @@ body {
     list-style: none;
     padding: 0px;
     gap: 4.375rem;
-    transform: translate(202px, -55px);
+    transform: translate(-255px, -25px);
 }
 
 .steps-item {
     max-width: 18.125rem;
-    transform: translate(-155px, -20px);
 }
 
 .steps-num {
@@ -344,6 +373,11 @@ body {
     background: rgb(92, 142, 230);
     width: 2.5rem;
     margin-right: 1.25rem;
+    transition: width 0.2s;
+}
+
+.steps-link:hover::before {
+    width: 60px;
 }
 
 .steps-button {
@@ -361,6 +395,113 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    transform: translateX(200px);
+}
+
+.card {
+    text-decoration: none;
+    flex-basis: 33%;
+    border: 1px solid #ebebf0;
+    position: relative;
+    transition: border 0.2s;
+}
+
+.card:hover .card-title {
+    color: #5c8ee6;
+}
+
+.card:hover {
+    border-color: #5C8EE6;
+}
+
+.card-content {
+    padding: 2.5rem 3.125rem;
+}
+
+.card-title {
+    font-weight: 400;
+    font-size: 28px;
+    color: #292d33;
+    margin-top: 0;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 140%;
+    color: #828a99;
+    margin-bottom: 24.625rem;
+}
+
+.card-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 90%;
+}
+
+.trademark-cards {
+    display: flex;
+}
+
+.trademark-card {
+    transform: translateX(200px);
+    flex-basis: 50%;
+    text-decoration: none;
+    border: 1px solid #ebebf0;
+    transition: border 0.2s;
+    padding: 3.125rem;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: auto 2fr;
+    grid-column-gap: 3.125rem;
+    grid-template-areas:
+        "logo title title"
+        "logo text text";
+}
+
+.trademark-card-logo {
+    width: 100%;
+    fill: #828a99;
+    grid-area: logo;
+}
+
+.trademark-card-title {
+    font-weight: 400;
+    margin: 0;
+    font-size: 1.75rem;
+    line-height: 160%;
+    color: #292d33;
+    grid-area: title;
+}
+
+.trademark-card-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 160%;
+    color: #828a99;
+    grid-area: text;
+    margin-top: .625rem;
+}
+
+.trademark-card:hover {
+    border-color: #5c8ee6;
+}
+
+.trademark-card:hover .trademark-card-logo {
+    fill: #5C8EE6;
+}
+
+.trademark-card:hover .trademark-card-title {
+    color: #5C8EE6;
 }
 
 @media (max-width: 1920px) {
@@ -438,6 +579,11 @@ body {
 
     }
 
+    .steps-item {
+        max-width: 52.5rem;
+        transform: translate(27px, 1px);
+    }
+
 }
 
 @media (max-width: 1670px) {
@@ -466,8 +612,13 @@ body {
     }
 
     .steps-item {
-        max-width: 18.125rem;
-        transform: translate(-85px, -20px);
+        max-width: 15rem;
+        transform: translate(-50px, 1px);
+    }
+
+    .steps {
+        display: flex;
+        transform: translate(0px, 0px);
     }
 }
 
@@ -490,6 +641,11 @@ body {
 
     .header-nav-item:not(:last-child) {
         margin-right: 1 rem;
+    }
+
+    .steps-item {
+        max-width: 15rem;
+        transform: translate(-50px, 1px);
     }
 }
 
@@ -520,6 +676,19 @@ body {
 
     .steps-button {
         display: flex;
+    }
+
+    .card {
+        flex-basis: 50%;
+    }
+
+    .steps-item {
+        max-width: 15rem;
+        transform: translate(-50px, 1px);
+    }
+
+    .trademark-card {
+        grid-template-columns: auto auto;
     }
 }
 
@@ -677,7 +846,11 @@ body {
 
     .steps-item {
         max-width: 18.125rem;
-        transform: translate(-65px, -20px);
+        transform: translate(-65px, 0px);
+    }
+
+    .trademark-cards {
+        flex-direction: column;
     }
 }
 
@@ -693,6 +866,10 @@ body {
     .header-content {
         padding-top: 3rem;
     }
+
+    .card {
+        flex-basis: 100%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -706,5 +883,11 @@ body {
 
     .header-content {
         padding-top: 2rem;
+    }
+
+    .trademark-cards {
+        grid-template-areas:
+            "logo title"
+            "text text";
     }
 }
