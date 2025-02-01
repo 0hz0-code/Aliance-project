@@ -357,7 +357,7 @@ body {
     margin-bottom: 1.25rem;
 }
 
-.steps-link {
+.button-link {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -367,7 +367,7 @@ body {
     color: rgb(92, 142, 230);
 }
 
-.steps-link::before {
+.button-link::before {
     content: "";
     height: .0625rem;
     background: rgb(92, 142, 230);
@@ -376,7 +376,7 @@ body {
     transition: width 0.2s;
 }
 
-.steps-link:hover::before {
+.button-link:hover::before {
     width: 60px;
 }
 
@@ -504,6 +504,107 @@ body {
     color: #5C8EE6;
 }
 
+.founder {
+    position: relative;
+}
+
+.founder-photo {
+    left: 0;
+    width: 40%;
+    top: 0;
+    object-fit: cover;
+    transform: translate(0px, 30px);
+}
+
+.founder-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #828a99;
+}
+
+.founder-content {
+    max-width: 45rem;
+    transform: translate(0px, -575px);
+}
+
+.founder-content .section-title {
+    transform: translateX(0px);
+}
+
+.founder-content .seporator {
+    transform: translateX(0px);
+}
+
+.founder-content-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.clients-wrapper {
+    display: flex;
+    gap: 50px;
+}
+
+.clients-content {
+    flex-basis: 50%;
+}
+
+.clients-list {
+    list-style-type: none;
+    padding: 0;
+    columns: 2 auto;
+    transform: translate(0px, -350px);
+}
+
+.clients-list-item {
+    align-items: center;
+    gap: 1.25rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 160%;
+    color: #292d33;
+}
+
+.clients-logo-list {
+    display: flex;
+    flex-wrap: wrap;
+    transform: translate(20px, -350px);
+}
+
+.client-logo-item {
+    flex-basis: 33%;
+    border: 1px solid #ebebf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    filter: grayscale(100%);
+    transition: filter 0.2s;
+}
+
+.client-logo-item:hover {
+    filter: grayscale(0%);
+}
+
+.clients-logo {
+    max-width: 100%;
+    width: 70px;
+    height: 70px;
+}
+
+.clients-list-icon {
+    transform: translate(-10px, 10px);
+}
+
+.clients-content .section-title {
+    transform: translate(0px, -375px);
+}
+
+.clients .seporator {
+    transform: translate(0px, -365px);
+}
+
 @media (max-width: 1920px) {
 
     .navbar {
@@ -620,6 +721,10 @@ body {
         display: flex;
         transform: translate(0px, 0px);
     }
+
+    .founder-content {
+        transform: translate(0px, -525px);
+    }
 }
 
 @media (max-width: 1460px) {
@@ -647,6 +752,27 @@ body {
         max-width: 15rem;
         transform: translate(-50px, 1px);
     }
+
+    .clients-content .section-title {
+        transform: translate(100px, -375px);
+    }
+
+    .clients .seporator {
+        transform: translate(100px, -365px);
+    }
+
+    .clients-list {
+        transform: translate(110px, -350px);
+    }
+
+    .clients-logo-list {
+        transform: translate(150px, -350px);
+    }
+
+    .founder-content {
+        transform: translate(0px, -475px);
+    }
+
 }
 
 @media (max-width: 1200px) {
@@ -689,6 +815,10 @@ body {
 
     .trademark-card {
         grid-template-columns: auto auto;
+    }
+
+    .founder-content {
+        max-width: 35rem;
     }
 }
 
@@ -852,6 +982,22 @@ body {
     .trademark-cards {
         flex-direction: column;
     }
+
+    .founder-content {
+        max-width: 80%;
+        transform: translate(250px, -335px);
+    }
+
+    .founder-photo {
+        transform: translate(90px, 0px);
+    }
+
+    .clients-list {
+        width: 210px;
+        columns: auto;
+        transform: translate(100px, -350px);
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -870,6 +1016,37 @@ body {
     .card {
         flex-basis: 100%;
     }
+
+    .founder-photo {
+        width: 100%;
+        position: relative;
+        margin-bottom: 3.125rem;
+        transform: translate(190px, 0px);
+    }
+
+
+
+    .clients .seporator {
+        transform: translate(100px, -65px);
+    }
+
+    .clients-content {
+        transform: translate(0px, 350px);
+    }
+
+    .founder-content {
+        transform: translate(90px, 0px);
+        max-width: 100%;
+    }
+
+    .clients-logo-list {
+        transform: translate(100px, 0px);
+    }
+
+    .founder-text {
+        width: 700px;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -906,4 +1083,41 @@ body {
             "logo title"
             "text text";
     }
+
+    .founder-photo {
+        transform: translate(190px, -90px);
+    }
+
+    .founder-content {
+        transform: translate(-230px, -90px);
+        width: 100px;
+    }
+
+    .founder-text {
+        width: 540px;
+    }
+
+    .founder-content .section-title {
+        transform: translateX(0px);
+        width: 400px;
+    }
+
+    .clients .section-title {
+        transform: translate(100px, -350px);
+        width: 400px;
+    }
+
+    .clients .seporator {
+        transform: translate(200px, -150px);
+    }
+
+    .clients-content {
+        transform: translate(100px, 200px);
+    }
+
+    .clients-logo-list {
+        width: 100000000000000000px;
+        transform: translate(-200px, 350px);
+    }
+
 }
