@@ -704,6 +704,18 @@ body {
     justify-content: space-between;
 }
 
+.section.blog .container {
+    transform: translate(50px, -850px);
+}
+
+.section.blog .section-title {
+    transform: translate(0px, 0px);
+}
+
+.section.blog .seporator {
+    transform: translate(0px, -30px);
+}
+
 @media (max-width: 1920px) {
 
     .navbar {
