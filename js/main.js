@@ -96,3 +96,41 @@ const swiperBlog = new Swiper(".blog-slider", {
         prevEl: '.blog-button-prev',
     },
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.querySelector(".modal");
+    const modalContent = document.querySelector(".modal-content");
+    const modalToggle = document.querySelectorAll("[data-toggle=modal]");
+    const modalClose = document.querySelector(".modal-close");
+
+    const closeModal = () => {
+        modal.classList.remove("is-open");
+    };
+
+    modalToggle.forEach((element) => {
+        element.addEventListener("click", (event) => {
+            event.preventDefault();
+            modal.classList.add("is-open");
+        });
+    });
+
+    modalClose.addEventListener("click", (event) => {
+        event.preventDefault();
+        closeModal();
+    });
+
+    // Закрытие при клике вне окна
+    modal.addEventListener("click", (event) => {
+        console.log("Clicked element:", event.target);
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Закрытие по Escape
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
+            closeModal();
+        }
+    });
+});
