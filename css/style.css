@@ -51,9 +51,54 @@ body {
     height: 91.2px;
 }
 
+.logo-dark {
+    display: none;
+}
+
+.navbar-light .logo-light {
+    display: none;
+}
+.navbar-light .logo-dark {
+    display: block;
+}
+
+.navbar-scroll {
+    height: 4.5rem;
+}
+
 .phone-icon {
     fill: rgb(92, 142, 230);
 }
+
+.page-header {
+    background-color: #F0F2F5;
+    padding: 60px 0;
+    text-align: left;
+    position: relative;
+    transform: translate(0px, 20px);
+  }
+
+.page-header .seporator {
+    transform: translate(0px, -20px);
+}
+  
+.page-header .container {
+    transform: translate(-90px, 15px);
+}
+
+  .page-title {
+    font-family: "Bebas Neue Book";   
+    font-size: 60px;
+    line-height: 120%;
+    color: rgb(41, 45, 51);
+    margin-bottom: 10px;
+  }
+  
+  .breadcrumb {
+    font-size: 14px;
+    color: #8b8b8b;
+  }
+  
 
 .logo-svg {
     width: 140px;
@@ -725,10 +770,12 @@ body {
 
 .section-cta {
     position: relative;
-    padding-top: 100px;
-    margin-top: 150px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    margin-top: 100px;
+    padding-bottom: 0px;
+    transform: translateY(-850px);
 }
+
 
 .cta-from-wrapper {
     display: flex;
@@ -737,7 +784,9 @@ body {
 
 .cta-form {
     max-width: 840px;
+    transform: translate(0px, -50px);
 }
+
 
 .cta-form-text {
     font-style: normal;
@@ -978,7 +1027,7 @@ body {
 }
 
 .footer {
-    transform: translate(0, -750px);
+    transform: translate(0px, -800px);
 }
 
 .modal {
@@ -1065,6 +1114,17 @@ body {
     margin-bottom: 24px;
 }
 
+.cta-page {
+    position: relative;
+    padding-top: 150px;
+    margin-top: 100px;
+    padding-bottom: 0px;
+    transform: translateY(520px);
+}
+
+.footer-page {
+    transform: translate(0px, -300px);
+}
 
 @media (max-width: 1920px) {
     .navbar {
