@@ -7,12 +7,12 @@
                     <p class="cta-form-text">Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит
                         на все интересующие вопросы и поможем даже в самых сложных случаях!</p>
                     <div class="input-group-wrapper">
-                        <div class="input-group modal-input-group">
-                            <input id='modal-user-name' type="text" class="input" placeholder=" ">
+                        <div class="input-group">
+                            <input id="user-name" type="text" class="input" name="username" placeholder=" " maxlength="100" required>
                             <label class="input-group-label modal-input-label" for="modal-user-name">Имя</label>
                         </div>
                         <div class="input-group modal-input-group">
-                            <input id='modal-user-phone' type="tel" class="input" placeholder=" ">
+                            <input id="user-phone" type="tel" class="input" name="userphone" placeholder=" " maxlength="30" required>
                             <label class="input-group-label modal-input-label" for="modal-user-phone">Номер
                                 телефона</label>
                         </div>
