@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let modalDialog
     let alertModal = document.querySelector("#alert-modal")
 
-const modalButtons = document.querySelectorAllll("[data-toggle=modal]")
+const modalButtons = document.querySelectorAll("[data-toggle=modal]")
 modalButtons.
 
 modalButtons.forEach((button) => {
