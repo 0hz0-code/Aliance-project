@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let alertModal = document.querySelector("#alert-modal")
 
 const modalButtons = document.querySelectorAll("[data-toggle=modal]")
-modalButtons.
+
 
 modalButtons.forEach((button) => {
   /*клик по переключателю*/
