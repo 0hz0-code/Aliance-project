@@ -116,21 +116,21 @@ modalButtons.
 modalButtons.forEach((button) => {
   /*клик по переключателю*/
   button.addEventListener("click", (event) => {
-      event.preventDefault();
-      /*определяем текущее открытое окно*/
-      currentModal = document.querySelector(button.dataset.target);
-      /* открываем текущее окно */
-      currentModal.classList.toggle("is-open");
-      /* открываем диалогове окно*/
-      modalDialog = currentModal.querySelector(".modal-dialog");
-      /* отслеживаем клик по окну и пустым облыстям */
-      currentModal.addEventListener("click", (event) => {
-        /* если клик в пустую область (не диалог) */
-          if (!event.composedPath().includes(modalDialog)) {
-            /* закрываем окно */ 
-            currentModal.classList.remove("is-open");
-          }
-      });
+    event.preventDefault();
+    /*определяем текущее открытое окно*/
+    const currentModal = document.querySelector(button.dataset.target);
+    /* открываем текущее окно */
+    currentModal.classList.toggle("is-open");
+    /* открываем диалоговое окно*/
+    const modalDialog = currentModal.querySelector(".modal-dialog");
+    /* отслеживаем клик по окну и пустым областям */
+    currentModal.addEventListener("click", (event) => {
+      /* если клик в пустую область (не диалог) */
+      if (!event.composedPath().includes(modalDialog)) {
+        /* закрываем окно */
+        currentModal.classList.remove("is-open");
+      }
+    });
   });
 });
 /* ловим событие  нажатия на кнопку */
