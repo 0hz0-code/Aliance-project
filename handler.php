@@ -14,10 +14,13 @@ foreach($formData as $key => $value) {
     $text .= $key . "<b>" . $value . "</b>" . "%0A";
 }
 
-$sendToTelegram  = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$text}&parse_mode=html", "r");
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$text}&parse_mode=html", "r");
 
 if ($sendToTelegram) {
-    echo "Success";
+    // Возвращаем JSON-ответ для AJAX-запроса
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'success']);
 } else {
-    echo "Error";
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'error']);
 }

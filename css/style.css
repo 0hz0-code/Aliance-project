@@ -1047,25 +1047,26 @@ body {
 }
 
 .modal {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-100%);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(40, 45, 51, 0.5);
-    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
     display: flex;
-    transition: opacity 0.2s;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
 .modal.is-open {
-    transform: translateX(0);
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
 }
+
 
 .modal.is-open .modal-dialog {
     transform: translateY(0);
@@ -1073,15 +1074,12 @@ body {
 }
 
 .modal-dialog {
-    background-color: #fff;
-    margin: auto;
-    max-width: 28.75rem;
-    padding: 2.5rem 3.125rem;
     position: relative;
-    transform: translateY(-10%);
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 20px;
 }
+
 
 .modal-close {
     display: block;
@@ -1141,6 +1139,62 @@ body {
 .footer-page {
     transform: translate(0px, -300px);
 }
+
+.thank-you-modal {
+    background: white;
+    width: 500px;
+    height: 638px;
+    transform: translate(-30px, 15px);
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.thank-you-content {
+    transform: translate(0px, 80px);
+}
+
+.thank-you-title {
+    font-family: "Bebas Neue Book", sans-serif;
+    font-size: 44px;
+    color: #292d33;
+    transform: translate(10px, -60px);
+}
+
+.thank-you-text {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #828A99;
+    width: 360px;
+    height: 0px;
+    transform: translate(75px, -85px);
+}
+
+.thank-you-button {
+    font-family: "Bebas Neue Book", sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 2px solid #5C8EE5;
+    background: #5C8EE5;
+    padding-top: 15px;
+    padding-right: 50px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    font-size: 19px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.thank-you-image {
+    width: 360px;
+    transform: translate(0px, -45px);
+    margin: 0 auto 15px;
+    display: block;
+}
+
+
 
 @media (max-width: 1920px) {
     .navbar {

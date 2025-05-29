@@ -159,19 +159,27 @@
             </form>
         </div>
     </div>
-    <div class="modal" id="alert-modal">
-        <div class="modal-dialog">
-            <h2 class="modal-title">Спасибо!</h2>
+<div class="modal" id="alert-modal">
+    <div class="modal-dialog">
+        <div class="thank-you-modal">
+            <div class="thank-you-content">
+                <svg class="thank-you-image" width="360" height="310">
+                    <use href="img/sprite.svg#thank"></use>
+                </svg>
+                <h2 class="thank-you-title">СПАСИБО ЗА ЗАЯВКУ!</h2>
+                <p class="thank-you-text">
+                    Наш менеджер свяжется с Вами в ближайшее время, ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
+                </p>
+                <a href="/" class="thank-you-button">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+            </div>
             <a href="" class="modal-close" data-toggle="modal" data-target="#alert-modal">
                 <svg class="close-icon">
                     <use href="img/sprite.svg#close"></use>
                 </svg>
             </a>
-            <p class="modal-text">Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит на все
-                интересующие вопросы и поможем даже в самых сложных случаях!
-            </p>
         </div>
     </div>
+</div>
 
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/just-validate.production.min.js"></script>
