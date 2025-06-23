@@ -289,7 +289,7 @@
         </div>
     </section>
 
-    <?php $block_title = "собственные торговые марки" include_once('./template-parts/trademarks-block.php')?>
+    <?php include_once('./template-parts/trademarks-block.php')?>
     <section class="section founder">
         <img src="img/founder.svg" alt="founder" class="founder-photo">
         <div class="container">

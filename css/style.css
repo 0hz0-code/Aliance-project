@@ -72,10 +72,10 @@ body {
 
 .page-header {
     background-color: #F0F2F5;
-    padding: 60px 0;
+    padding: 30px 0;
     text-align: left;
     position: relative;
-    transform: translate(0px, 20px);
+    transform: translate(0px, 50px);
   }
 
 .page-header .seporator {
@@ -773,7 +773,7 @@ body {
     padding-top: 150px;
     margin-top: 100px;
     padding-bottom: 0px;
-    transform: translateY(-850px);
+    transform: translateY(-50px);
 }
 
 
@@ -1043,7 +1043,7 @@ body {
 }
 
 .footer {
-    transform: translate(0px, -800px);
+    transform: translate(0px, -90px);
 }
 
 .modal {
