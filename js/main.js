@@ -143,57 +143,92 @@ document.addEventListener("keyup", (event) => {
 })
 });
 
-const forms = document.querySelectorAll("form"); //собираем формы
+const forms = document.querySelectorAll("form");
 forms.forEach((form) => {
     const validation = new JustValidate(form, {
         errorFieldCssClass: 'is-invalid',
-  });
-  validation
-  .addField("[name=username]", [
-    {
-      rule: 'required',
-      errorMessage: "Укажите имя"
-    },
-    {
-      rule: 'maxLength',
-      value: 50,
-      errorMessage: "Максимально 50 символов"
-    },
-  ])
-  .addField("[name=userphone]", [
-    {
-      rule: 'required',
-      errorMessage: 'Укажите телефон',
-    },
-  ])
-  .onSuccess((event) => {
+    });
+    validation
+    .addField("[name=username]", [
+        {
+            rule: 'required',
+            errorMessage: "Укажите имя"
+        },
+        {
+            rule: 'maxLength',
+            value: 50,
+            errorMessage: "Максимально 50 символов"
+        },
+    ])
+    .addField("[name=userphone]", [
+        {
+            rule: 'required',
+            errorMessage: 'Укажите телефон',
+        },
+    ])
+    .onSuccess((event) => {
     const thisForm = event.target; 
     const formData = new FormData(thisForm);
-    const ajaxSend = (formData) => {
-      fetch(thisForm.getAttribute("action"), {
-      body: formData,
-      }).then((responce) => {
-        if (responce.ok) {
-          thisForm.reset();
-          currentModal.classList.remove("is-open");
-          alertModal.classList.add("is-open")
-          currentModal = alertModal;
-          modalDialog = currentModal.querySelector(".modal-dialog");
-      /* отслеживаем клик по окну и пустым облыстям */
-      currentModal.addEventListener("click", (event) => {
-        /* если клик в пустую область (не диалог) */
-          if (!event.composedPath().includes(modalDialog)) {
-            /* закрываем окно */ 
-            currentModal.classList.remove("is-open");
-          }
-      });
+    
+    // Находим текущее модальное окно и alertModal в момент отправки
+    const currentModal = document.querySelector('.modal.is-open');
+    const alertModal = document.querySelector("#alert-modal");
+    
+    fetch(thisForm.getAttribute("action"), {
+        method: "POST",
+        body: formData,
+    })
+    .then((response) => {
+        if (response.ok) {
+            thisForm.reset();
+            if (currentModal) currentModal.classList.remove("is-open");
+            if (alertModal) {
+                alertModal.classList.add("is-open");
+                const modalDialog = alertModal.querySelector(".modal-dialog");
+                alertModal.addEventListener("click", (event) => {
+                    if (modalDialog && !event.composedPath().includes(modalDialog)) {
+                        alertModal.classList.remove("is-open");
+                    }
+                });
+            }
         } else {
-          alert("Ошибка. Текст ошибки: ".respone.statusText);
+            alert("Ошибка. Текст ошибки: " + response.statusText);
         }
-      });
-    };
-    ajaxSend(formData);
-  });
+    })
+    .catch((error) => {
+        alert("Ошибка сети: " + error.message);
+    });
+});
+});
+
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch(this.action, {
+            method: this.method,
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.status === 'success') {
+                // Закрываем текущее модальное окно
+                const currentModal = this.closest('.modal');
+                if(currentModal) {
+                    currentModal.classList.remove('is-open');
+                }
+                
+                // Открываем модальное окно благодарности
+                const thankYouModal = document.getElementById('alert-modal');
+                thankYouModal.classList.add('is-open');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
 });
 
 /* Создаем префикс +7, даже если вводят 8 или 9 */

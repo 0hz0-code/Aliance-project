@@ -90,10 +90,10 @@
         </a>
         <ul class="header-nav">
             <li class="header-nav-item"><a href="./about.php" class="header-nav-link">О компании</a></li>
-            <li class="header-nav-item"><a href="" class="header-nav-link">Контрактное производство</a></li>
-            <li class="header-nav-item"><a href="" class="header-nav-link">Собственные торговые марки</a></li>
-            <li class="header-nav-item"><a href="" class="header-nav-link">Новости</a></li>
-            <li class="header-nav-item"><a href="" class="header-nav-link">Контакты</a></li>
+            <li class="header-nav-item"><a href="./contracts.php" class="header-nav-link">Контрактное производство</a></li>
+            <li class="header-nav-item"><a href="./trademarks.php" class="header-nav-link">Собственные торговые марки</a></li>
+            <li class="header-nav-item"><a href="./news.php" class="header-nav-link">Новости</a></li>
+            <li class="header-nav-item"><a href="./contacts.php" class="header-nav-link">Контакты</a></li>
         </ul>
         <div class="header-phone">
             <svg class="phone-icon" width="24" height="24">
