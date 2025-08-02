@@ -181,6 +181,7 @@ body {
     bottom: -0.0625rem;
     background-color: rgb(92, 142, 230);
     transition: width 0.2s;
+    transform: translateY(-8px);
     right: 0rem;
     left: auto;
 }
@@ -348,11 +349,11 @@ body {
 }
 
 .section.trademark .section-title {
-    transform: translate(6.5625rem, -5.3125rem);
+    transform: translate(3.225rem, -5.3125rem);
 }
 
 .section.trademark .seporator {
-    transform: translate(6.5625rem, -6.875rem);
+    transform: translate(3.2625rem, -6.875rem);
 }
 
 .section.production .section-title {
@@ -366,7 +367,7 @@ body {
 .section {
     margin-top: 182px;
     margin-bottom: 150px;
-    transform: translate(-2.5rem, 5rem);
+    /* transform: translate(-2.5rem, 5rem); */
 }
 
 .section.clients .container {
@@ -580,6 +581,7 @@ body {
 
 .founder {
     position: relative;
+    transform: translate(0px, 150px);
 }
 
 .founder-photo {
@@ -588,6 +590,10 @@ body {
     top: 0rem;
     object-fit: cover;
     transform: translate(.3125rem, -12.5rem);
+}
+
+.section.founder .container {
+    transform: translate(0px, -100px);
 }
 
 .founder-text {
@@ -744,11 +750,11 @@ body {
 }
 
 .section.blog .container {
-    transform: translate(3.125rem, -53.125rem);
+    transform: translate(3.125rem, -43.125rem);
 }
 
 .section.blog .section-title {
-    transform: translate(0rem, 0rem);
+    transform: translate(-0rem, 0rem);
 }
 
 .section.blog .seporator {
@@ -773,13 +779,17 @@ body {
     padding-top: 150px;
     margin-top: 100px;
     padding-bottom: 0px;
-    transform: translateY(-50px);
+    transform: translateY(-650px);
 }
 
 
 .cta-from-wrapper {
     display: flex;
     justify-content: flex-end;
+}
+
+.section.trademark .container {
+    transform: translate(0px, 0px);
 }
 
 .cta-form {
@@ -961,6 +971,7 @@ body {
 }
 
 .footer-menu-title {
+
     margin-top: 0;
     margin-bottom: 1.875rem;
     font-style: normal;
@@ -1015,6 +1026,10 @@ body {
     transform: translate(0px, -30px);
 }
 
+.section.production .container {
+    transform: translate(-50px, -100px);
+}
+
 .footer-bottom {
     display: flex;
 }
@@ -1033,6 +1048,10 @@ body {
     display: block;
 }
 
+.section.clients .container {
+    transform: translate(0px, -270px);
+}
+
 .footer-social-icon {
 
     transform: translate(80px, 0px);
@@ -1043,7 +1062,7 @@ body {
 }
 
 .footer {
-    transform: translate(0px, -90px);
+    transform: translate(0px, -570px);
 }
 
 .modal {
@@ -1067,6 +1086,9 @@ body {
     visibility: visible;
 }
 
+.modal-dialog .modal-close{
+    transform: translateY(15px);
+}
 
 .modal.is-open .modal-dialog {
     transform: translateY(0);
@@ -1074,12 +1096,12 @@ body {
 }
 
 .modal-dialog {
-    background-color: #fff;
     position: relative;
     max-width: 500px;
     width: 100%;
     margin: 0 20px;
     padding: 50px;
+    background-color: #fff;
 }
 
 
@@ -1094,6 +1116,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid #ebebf0;
+    transform: translate(15px, -70px);
 }
 
 .modal-title {
@@ -1146,21 +1169,27 @@ body {
     background: white;
     width: 500px;
     height: 638px;
-    transform: translate(-30px, 15px);
+    transform: translate(-50px, 15px);
     text-align: center;
     position: relative;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: transparent;
+  box-shadow: none;
+}
+
+.thank-you-modal .modal-close{
+    transform: translateY(-60px);
 }
 
 .thank-you-content {
-    transform: translate(0px, 80px);
+    transform: translate(0px, 110px);
 }
 
 .thank-you-title {
     font-family: "Bebas Neue Book", sans-serif;
     font-size: 44px;
     color: #292d33;
-    transform: translate(10px, -60px);
+    transform: translate(5px, -85px);
 }
 
 .thank-you-text {
@@ -1170,7 +1199,7 @@ body {
     color: #828A99;
     width: 360px;
     height: 0px;
-    transform: translate(75px, -85px);
+    transform: translate(75px, -100px);
 }
 
 .thank-you-button {
@@ -1190,8 +1219,9 @@ body {
 }
 
 .thank-you-image {
-    width: 360px;
-    transform: translate(0px, -45px);
+    width: 400px;
+    height: 330px;
+    transform: translate(0px, -80px);
     margin: 0 auto 15px;
     display: block;
 }
@@ -1202,6 +1232,23 @@ body {
     .navbar {
         height: 80px;
     }
+
+    .navbar-button {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 160%;
+    color: rgb(255, 255, 255);
+    background: rgb(58, 113, 209);
+    padding: 26px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    height: 5.8rem;
+    width: 28.4375rem;
+    transition: background-color 0.3s;
+    transform: translate(.375rem, -0.0125rem);
+}
 
     .logo-svg {
         width: 160px;
@@ -1257,7 +1304,8 @@ body {
     .header-nav-item:not(:last-child) {}
 
     .navbar-button {
-        transform: translateY(-0.4375rem);
+        transform: translateY(0);
+        height: 75px
     }
 
     .steps-item {
@@ -1272,6 +1320,14 @@ body {
 
     .founder-content {
         transform: translate(3.125rem, -32.8125rem);
+    }
+
+    .cta {
+        transform: translateY(-600px);
+    }
+
+    .footer {
+        transform: translateY(-600px);
     }
 }
 
@@ -1320,7 +1376,11 @@ body {
     }
 
     .footer {
-        transform: translate(10px, -550px);
+        transform: translate(0px, -700px);
+    }
+
+    .section-cta {
+    /* transform: translate(0px, -90px); */
     }
 }
 
@@ -1340,9 +1400,9 @@ body {
     .navbar-button {
         padding-left: 32px;
         padding-right: 32px;
-        transform: translate(0rem, 0rem);
-        height: 3.75rem;
-        width: 4.375rem;
+        transform: translate(-0px, 0rem);
+        height: 78px;
+        width: 200px;
     }
 
     .slider-buttons {
@@ -1405,11 +1465,15 @@ body {
     }
 
     .cta-image {
-        transform: translate(-10.9375rem, -53.125rem);
+        transform: translate(-10.9375rem, 0rem);
     }
 
     .section.blog {
         transform: translate(-5.625rem, 1.875rem);
+    }
+
+    .founder-photo {
+        transform: translateY(-25px);
     }
 }
 
@@ -1420,6 +1484,14 @@ body {
 
     .container {
         max-width: 960px;
+    }
+
+    .navbar-button {
+        padding-left: 32px;
+        padding-right: 32px;
+        transform: translate(-90px, 0px);
+        height: 77px;
+        width: 100px;
     }
 
     .header-nav {
@@ -1463,6 +1535,7 @@ body {
     .navbar-button .button-icon {
         display: block;
         fill: rgb(255, 255, 255);
+        transform: translateX(8px);
     }
 
     .mobile-menu {
@@ -1571,7 +1644,7 @@ body {
 
     .founder-content {
         max-width: 37.5rem;
-        transform: translate(-3.125rem, 0rem);
+        transform: translate(-325px, 0rem);
     }
 
     .founder-photo {
@@ -1591,7 +1664,7 @@ body {
     }
 
     .cta-from-wrapper {
-        transform: translate(-5.3125rem, -53.125rem);
+        transform: translate(-125px, -95px);
     }
 
     .cta-form-title {
@@ -1607,7 +1680,7 @@ body {
     }
 
     .section-cta {
-        transform: translate(-5.625rem, 20.3125rem);
+        /* transform: translate(-5.625rem, 20.3125rem); */
     }
 
     .cta-form {
@@ -1616,7 +1689,7 @@ body {
 
     .bg-grey {
         background: rgb(240, 242, 245);
-
+        /* transform: translate(0px, 203px); */
     }
 
     .founder-text {
@@ -1642,6 +1715,14 @@ body {
         transform: translate(6.25rem, -23.125rem);
         width: 21.875rem;
     }
+
+    .section.clients .container {
+    transform: translate(180px, -35.25rem);
+}
+
+    .section.blog .container {
+    transform: translate(15.125rem, -61.125rem);
+}
 }
 
 @media (max-width: 768px) {
@@ -1682,7 +1763,7 @@ body {
     }
 
     .clients .seporator {
-        transform: translate(-7.5rem, 3.125rem);
+        transform: translate(-345px, 110px);
     }
 
     .clients-content {
@@ -1713,13 +1794,45 @@ body {
     }
 
     .section-cta {
-        transform: translate(11.875rem, 20.3125rem);
+        /* transform: translate(0px, 60px); */
+        width: 1000px;
     }
+
+    .clients-list-item {
+        transform: translate(-155px, 0rem);
+    }
+
+    .client-logo-item {
+    transform: translate(-155px, 0rem);    
+    }
+
+    .section.blog .container {
+        transform: translate(150px, -840px);
+    }
+
+    .cta-form {
+        transform: translate(90px, -80px);
+    }
+
+    .footer-social-icon {
+        transform: translate(200px, 0px);
+    }
+
+    .footer-phone {
+    transform: translate(40px, 0px);
+    width: 400px;
+    }
+
+    
 }
 
 @media (max-width: 576px) {
     .container {
         max-width: 90%;
+    }
+
+    .header-image {
+    transform: translate(120px, 0px);
     }
 
     .header .seporator {
@@ -1760,21 +1873,22 @@ body {
     }
 
     .founder-text {
-        width: 33.75rem;
+        font-size: 17px;
+        width: 700px;
+        transform: translate(-150px, -170px);
     }
 
     .founder-content .section-title {
-        transform: translateX(0rem);
-        width: 25rem;
+        transform: translate(-111px, -630px);
     }
 
     .clients .section-title {
-        transform: translate(6.25rem, -21.875rem);
-        width: 25rem;
+        transform: translate(-60px, -340px);
+        width: 700px;
     }
 
     .clients .seporator {
-        transform: translate(12.5rem, -9.375rem);
+        transform: translate(-240px, -100px);
     }
 
     .clients-content {
@@ -1785,4 +1899,69 @@ body {
         width: 1e+1.0625rem;
         transform: translate(-12.5rem, 21.875rem);
     }
+
+    .section.section-light{
+        transform: translate(120px, 0px);
+    }
+
+    .section.production {
+        transform: translate(120px, 0px);
+    }
+
+     .trademark-card {
+        transform: translate(250px, -150px);
+     }
+
+    .section.founder {
+    transform: translate(120px, -70px);
+    }
+
+    .founder-content .seporator {
+    transform: translate(-110px, -600px);
+    }
+        .founder-content .button-link {
+        transform: translate(-150px, -170px);
+            width: 300px
+        }
+    .clients-list-item {
+        transform: translate(-120px, -100px);
+    }
+
+    .client-logo-item {
+    transform: translate(-320px, -230px);
+        width: 800px;
+        height: 360px
+    }
+
+    .section.blog {
+    transform: translate(0px, 420px);
+        width: 800px;
+    }
+
+    .footer-top {
+    transform: translate(0px, 0px);
+    }
+
+    .footer {
+    transform: translate(120px, -550px);
+    }
+
+        .footer-phone {
+        transform: translate(50px, 0px);
+        }
+
+    .footer-wrapper,
+.footer-legal {
+transform: translate(-6px, -40px);
+}
+
+    .footer-seporator {
+    transform: translate(-20px, 0px);
+        width: 1000px;
+    }
+
+.footer-authot {
+    transform: translate(350px, -40px);
+}
+    
 }

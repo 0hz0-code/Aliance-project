@@ -1,12 +1,9 @@
 <section class="section trademark">
         <div class="container">
             
-            <?php
-            if (!empty($block_title)) {
-                echo '<div class="seporator"></div>';
-                echo '<h2 class="section-title">'. $block_title .'</h2>';
-            }
-            ?>
+        <div class="seporator"></div>
+                <h2 class="section-title">Собственные торговые марки</h2>    
+
             <div class="trademark-cards">
                 <div class="trademark-card">
                     <svg class="trademark-card-logo">

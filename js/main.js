@@ -165,14 +165,20 @@ forms.forEach((form) => {
             rule: 'required',
             errorMessage: 'Укажите телефон',
         },
+        {
+            rule: 'minLength',
+            value: 11,
+            errorMessage: 'Номер должен содержать 11 цифр'
+        }
     ])
-    .onSuccess((event) => {
-    const thisForm = event.target; 
+
+.onSuccess((event) => {
+    event.preventDefault();
+    
+    const thisForm = event.target;
     const formData = new FormData(thisForm);
     
-    // Находим текущее модальное окно и alertModal в момент отправки
-    const currentModal = document.querySelector('.modal.is-open');
-    const alertModal = document.querySelector("#alert-modal");
+    const currentModal = thisForm.closest('.modal');
     
     fetch(thisForm.getAttribute("action"), {
         method: "POST",
@@ -181,122 +187,82 @@ forms.forEach((form) => {
     .then((response) => {
         if (response.ok) {
             thisForm.reset();
-            if (currentModal) currentModal.classList.remove("is-open");
+            
+            if (currentModal) {
+                currentModal.style.display = 'none';
+                currentModal.classList.remove("is-open");
+            }
+            
+            const alertModal = document.getElementById("alert-modal");
             if (alertModal) {
+                alertModal.style.display = 'flex';
                 alertModal.classList.add("is-open");
+                
                 const modalDialog = alertModal.querySelector(".modal-dialog");
-                alertModal.addEventListener("click", (event) => {
-                    if (modalDialog && !event.composedPath().includes(modalDialog)) {
+                alertModal.addEventListener("click", function modalClickHandler(e) {
+                    if (!e.composedPath().includes(modalDialog)) {
+                        alertModal.style.display = 'none';
                         alertModal.classList.remove("is-open");
+                        alertModal.removeEventListener("click", modalClickHandler);
+                    }
+                });
+                
+                document.addEventListener("keyup", function escapeHandler(e) {
+                    if(e.key == "Escape" && alertModal.classList.contains("is-open")) {
+                        alertModal.style.display = 'none';
+                        alertModal.classList.remove("is-open");
+                        document.removeEventListener("keyup", escapeHandler);
                     }
                 });
             }
         } else {
-            alert("Ошибка. Текст ошибки: " + response.statusText);
+            alert("Ошибка отправки: " + response.statusText);
         }
     })
     .catch((error) => {
         alert("Ошибка сети: " + error.message);
     });
 });
+
 });
 
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        
-        fetch(this.action, {
-            method: this.method,
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if(data.status === 'success') {
-                // Закрываем текущее модальное окно
-                const currentModal = this.closest('.modal');
-                if(currentModal) {
-                    currentModal.classList.remove('is-open');
-                }
-                
-                // Открываем модальное окно благодарности
-                const thankYouModal = document.getElementById('alert-modal');
-                thankYouModal.classList.add('is-open');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+/* Улучшенная маска для телефона (+7) */
+const formatPhoneNumber = (input) => {
+  const value = input.value.replace(/\D+/g, "");
+  const numberLength = 11;
+  let result = input.value.includes("+8") || input.value[0] === "8" ? "" : "+";
+
+  for (let i = 0; i < value.length && i < numberLength; i++) {
+    switch (i) {
+      case 0: 
+        result += value[i] === "8" ? "+7 (" : value[i] === "9" ? "7 (9" : "7 (";
+        continue;
+      case 4: result += ") "; break;
+      case 7: result += "-"; break;
+      case 9: result += "-"; break;
+    }
+    result += value[i];
+  }
+  input.value = result;
+};
+
+document.addEventListener('input', (e) => {
+  if (e.target.getAttribute('name') === 'userphone') {
+    formatPhoneNumber(e.target);
+    
+    const phoneDigits = e.target.value.replace(/\D+/g, '');
+    if (phoneDigits.length !== 11) {
+      e.target.setCustomValidity('Номер должен содержать 11 цифр');
+    } else {
+      e.target.setCustomValidity('');
+    }
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('input[name="userphone"]').forEach(input => {
+    input.addEventListener('input', (e) => {
+      formatPhoneNumber(e.target);
     });
+  });
 });
-
-/* Создаем префикс +7, даже если вводят 8 или 9 */
-const prefixNumber = (str) => {
-    /* если вводят семерку, добавляем ей скобку */
-    if (str === "7") {
-      return "7 (";
-    }
-    /* если вводят восьмерку, ставим вместо нее +7 ( */
-    if (str === "8") {
-      return "+7 (";
-    }
-    /* если пишут девятку, заменяем на +7 (9  */
-    if (str === "9") {
-      return "7 (9";
-    }
-    /* в других случаях просто 7 (  */
-    return "7 (";
-  }; /* профикс в любом раскладе будет +7 () */
-  
-  /* Ловим события ввода в любом поле */
-  document.addEventListener("input", (e) => {
-    /* Проверяем, что это поле имеет класс phone-mask */
-    if (e.target.classList.contains("phone-mask")) {
-      /* поле с телефоном помещаем в переменную input */
-      const input = e.target;
-      /* вставляем плюс в начале номера */
-      const value = input.value.replace(/\D+/g, "");
-      /* длинна номера 11 символов */
-      const numberLength = 11;
-  
-      /* Создаем переменную, куда будем записывать номер */
-      let result;
-      /* Если пользователь ввел 8... */
-      if (input.value.includes("+8") || input.value[0] === "8") {
-        /* Стираем восьмерку */
-        result = "";
-      } else {
-        /* Оставляем плюсик в поле */
-        result = "+";
-      }
-  
-      /* Запускаем цикл, где переберем каждую цифру от 0 до 11 */
-      for (let i = 0; i < value.length && i < numberLength; i++) {
-        switch (i) {
-          case 0:
-            /* в самом начале ставим префикс +7 ( */
-            result += prefixNumber(value[i]);
-            continue;
-          case 4:
-            /* добавляем после "+7 (" круглую скобку ")" */
-            result += ") ";
-            break;
-          case 7:
-            /* дефис после 7 символа */
-            result += "-";
-            break;
-          case 9:
-            /* еще дефис  */
-            result += "-";
-            break;
-          default:
-            break;
-        }
-        /* на каждом шаге цикла добавляем новую цифру к номеру */
-        result += value[i];
-      }
-      /* итог: номер в формате +7 (999) 123-45-67 */
-      input.value = result;
-    }
-  })
