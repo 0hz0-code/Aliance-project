@@ -819,6 +819,9 @@ body {
     flex-direction: column;
 }
 
+
+
+
 .input-group {
     position: relative;
     height: 66px;
@@ -839,7 +842,7 @@ body {
 
 .input-group-label {
     position: absolute;
-    cursor: text;
+    cursor: default;
     top: 24px;
     left: 31.6px;
     font-weight: 400;
@@ -1250,6 +1253,10 @@ body {
     transform: translate(.375rem, -0.0125rem);
 }
 
+    .section.section-light {
+        transform: translateY(50px);
+    }
+
     .logo-svg {
         width: 160px;
         transform: translate(-0.625rem, .375rem);
@@ -1262,6 +1269,10 @@ body {
     .header-title {
         font-size: 80px;
         transform: translate(9.0625rem, 1.5625rem);
+    }
+
+    .section.blog {
+        transform: translate(-50px, 60px);
     }
 
     .header-text {
@@ -1287,6 +1298,64 @@ body {
 @media (max-width: 1670px) {
     html {
         font-size: .8125rem;
+    }
+
+    .section.section-light {
+    transform: translateX(-180px);
+    }
+
+    .section-title {
+    transform: translate(270px, 50px);
+    }
+
+    .section.trademark .section-title {
+    transform: translate(80px, -30px);
+    }
+
+    .clients-content {
+        /* transform: translateX(80px); */
+    }
+
+    .clients-content .section-title {
+        /* height: 0px; */
+        /* width: 600px; */
+    }
+    
+    .section.clients .container .seporator {
+        transform: translate(0px, -280px);
+    }
+
+    .section.clients {
+    transform: translateY(80px);
+    }
+
+    .section.clients .seporator {
+        /* transform: translate(6.25rem, -22.8125rem); */
+    }
+
+    .section.clients .section-title{
+        /* transform: translate(80px, -400px); */
+    }
+
+    .section.trademark .seporator {
+        transform: translate(80px, -50px);
+    }
+
+    .founder-content .section-title {
+    width: 900px;
+}
+
+    .section-cta .section-title {
+        transform: translateX(0px);
+    }
+
+    .clients-wrapper {
+        /* transform: translateX(-120px); */
+        /* gap: 1px; */
+    }
+
+    .section .seporator {
+    transform: translate(270px, 40px);
     }
 
     .header-logo {
@@ -1319,7 +1388,11 @@ body {
     }
 
     .founder-content {
-        transform: translate(3.125rem, -32.8125rem);
+        transform: translate(5.125rem, -35.8125rem);
+    }
+
+    .founder-content .seporator {
+        transform: translate(-10px, -110px);
     }
 
     .cta {
@@ -1329,6 +1402,10 @@ body {
     .footer {
         transform: translateY(-600px);
     }
+
+    .bg-grey {
+    transform: translateY(0px);
+}
 }
 
 @media (max-width: 1460px) {
@@ -1359,7 +1436,11 @@ body {
         transform: translate(6.25rem, -23.4375rem);
     }
 
-    .clients .seporator {
+    .section.clients .container .seporator {
+        transform: translate(85px, -300px);
+    }
+
+    .section.clients .seporator {
         transform: translate(6.25rem, -22.8125rem);
     }
 
@@ -1368,15 +1449,19 @@ body {
     }
 
     .clients-logo-list {
-        transform: translate(9.375rem, -21.875rem);
+        /* transform: translate(9.375rem, -21.875rem); */
     }
 
     .founder-content {
         transform: translate(0rem, -29.6875rem);
     }
 
+    .cta-image {
+        transform: translateX(-85px);
+    }
+
     .footer {
-        transform: translate(0px, -700px);
+        /* transform: translate(0px, -700px); */
     }
 
     .section-cta {
@@ -1413,6 +1498,15 @@ body {
         height: 2.5rem;
     }
 
+    .cards {
+        transform: translate(55px, -70px);
+    }
+
+    .clients-logo-list {
+        transform: translate(250px, -130px);
+        height: 100px
+    }
+
     .primary-button-prev,
     .primary-button-next {
         width: 3.75rem;
@@ -1422,8 +1516,16 @@ body {
         display: flex;
     }
 
+    .section.clients .container .seporator {
+        transform: translate(-45px, -230px);
+    }
+
     .card {
         flex-basis: 50%;
+    }
+
+    .trademark-cards {
+        transform: translate(-80px, 40px);
     }
 
     .steps-item {
@@ -1437,11 +1539,19 @@ body {
 
     .founder-content {
         max-width: 560px;
-        transform: translate(6.25rem, -23.75rem);
+        transform: translate(-20px, -420px);
+    }
+
+    .section-cta {
+        transform: translate(0px, -85px); 
     }
 
     .founder-content .section-title {
         width: 37.5rem;
+    }
+
+    .section.clients {
+        transform: translate(85px, -100px);
     }
 
     .clients-content {
@@ -1449,9 +1559,9 @@ body {
         transform: translate(5.3125rem, -1.875rem);
     }
 
-    .clients-content .section-title {
-        transform: translate(6.25rem, -21.875rem);
-        width: 37.5rem;
+    .section.clients .section-title {
+        transform: translate(80px, -300px);
+        width: 600px
     }
 
     .clients .seporator {
@@ -1469,11 +1579,11 @@ body {
     }
 
     .section.blog {
-        transform: translate(-5.625rem, 1.875rem);
+        transform: translate(-35px, -100px);
     }
 
     .founder-photo {
-        transform: translateY(-25px);
+        transform: translateY(-155px);
     }
 }
 
@@ -1746,7 +1856,7 @@ body {
         width: 100%;
         position: relative;
         margin-bottom: 50px;
-        transform: translate(4.6875rem, -18.75rem);
+        transform: translate(0.3875rem, -41.75rem);
     }
 
     .founder-content .section-title {
@@ -1762,13 +1872,42 @@ body {
         transform: translate(-6.25rem, -14.375rem);
     }
 
+    .trademark-cards {
+        transform: translate(-85px, -40px);
+    }
+
     .clients .seporator {
         transform: translate(-345px, 110px);
     }
 
-    .clients-content {
-        transform: translate(0rem, 21.875rem);
+    .section.trademark .section-title {
+        transform: translate(20px, -70px);
     }
+
+    .section.trademark .seporator {
+        transform: translate(20px, -75px);
+    }
+
+    .clients-content {
+        transform: translate(-50px, 200px);
+    }
+
+    .section.clients .section-title {
+        transform: translate(-100px, -300px);
+    }
+
+    .steps-item {
+        transform: translate(-90px, 0px);
+        padding: 2px;
+        
+    }
+
+    .clients-list {
+        width: 300px;
+        columns: auto;
+        transform: translate(5.25rem, -26.875rem);
+    }
+
 
     .founder-content {
         transform: translate(5.625rem, 0rem);
@@ -1777,6 +1916,22 @@ body {
 
     .clients-logo-list {
         transform: translate(6.25rem, 0rem);
+    }
+
+    .section.trademark {
+        transform: translate(-5px, -180px);
+    }
+
+    .founder-content-wrapper {
+        transform: translate(-120px, -250px);
+    }
+
+    .navbar-button {
+        padding-left: 32px;
+        padding-right: 32px;
+        transform: translate(0px, 0px);
+        height: 77px;
+        width: 100px;
     }
 
     .founder-text {
@@ -1793,8 +1948,13 @@ body {
         transform: translate(18.75rem, 0rem);
     }
 
+    .section.clients .container .seporator {
+        transform: translate(-400px, -30px);
+    }
+
     .section-cta {
-        /* transform: translate(0px, 60px); */
+        transform: translate(-82px, -60px);
+        height: 500px;
         width: 1000px;
     }
 
@@ -1807,7 +1967,7 @@ body {
     }
 
     .section.blog .container {
-        transform: translate(150px, -840px);
+        transform: translate(90px, -960px);
     }
 
     .cta-form {
@@ -1859,12 +2019,46 @@ body {
         padding-top: 32px;
     }
 
+    .section.clients {
+        transform: translate(80px, -180px);
+    }
+
+
+
     .trademark-cards {
-        grid-template-areas: "logo title" "text text";
+        transform: translate(-245px, -50px);
+    }
+
+    .section.clients .section-title {
+        width: 580px;
     }
 
     .founder-photo {
-        transform: translate(11.875rem, -5.625rem);
+        transform: translate(-120px, -220px);
+    }
+
+   .cta-from-wrapper.container {
+        transform: translate(30px, -120px);
+       height: 300px;
+       width: 1px;
+   }
+
+    .bg-grey.section-cta {
+        transform: translate(0px, -310px);
+        height: 500px; 
+        width: 800px
+    }
+
+    .section.clients .container .seporator {
+        transform: translate(-280px, -60px);
+    }
+
+    .section.blog .container {
+        transform: translate(-30px, -1240px);
+    }
+
+    .clients-list {
+        transform: translate(50px, -220px);
     }
 
     .founder-content {
@@ -1872,14 +2066,23 @@ body {
         width: 6.25rem;
     }
 
+    .header {
+        transform: translate(-0px, 0px);
+    }
+
     .founder-text {
         font-size: 17px;
-        width: 700px;
-        transform: translate(-150px, -170px);
+        width: 530px;
+        transform: translate(-270px, -50px);
     }
 
     .founder-content .section-title {
-        transform: translate(-111px, -630px);
+        transform: translate(-250px, -550px);
+    }
+
+    .section-title.cta-form-title {
+        transform: translate(0px, 30px);
+        width: 470px;
     }
 
     .clients .section-title {
@@ -1896,31 +2099,38 @@ body {
     }
 
     .clients-logo-list {
-        width: 1e+1.0625rem;
-        transform: translate(-12.5rem, 21.875rem);
+        display: none;
     }
 
     .section.section-light{
-        transform: translate(120px, 0px);
+        transform: translate(-200px, -70px);
     }
 
     .section.production {
-        transform: translate(120px, 0px);
+        transform: translate(0px, -75px);
     }
 
      .trademark-card {
         transform: translate(250px, -150px);
      }
 
+    .section.trademark .section-title {
+        transform: translate(20px, -170px);
+    }
+
+    .section.trademark .seporator {
+        transform: translate(20px, -180px);
+    }
+
     .section.founder {
     transform: translate(120px, -70px);
     }
 
     .founder-content .seporator {
-    transform: translate(-110px, -600px);
+    transform: translate(-250px, -515px);
     }
         .founder-content .button-link {
-        transform: translate(-150px, -170px);
+        transform: translate(-270px, -50px);
             width: 300px
         }
     .clients-list-item {
@@ -1942,12 +2152,19 @@ body {
     transform: translate(0px, 0px);
     }
 
+    .logo-svg.footer-logo {
+    transform: scale(9.5);
+    }
+
     .footer {
-    transform: translate(120px, -550px);
+    transform: translate(0px, -860px);
+    height: 300px;
+    width: 500px
     }
 
         .footer-phone {
-        transform: translate(50px, 0px);
+        transform: translate(110px, 0px);
+            width: 1000px;
         }
 
     .footer-wrapper,

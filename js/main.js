@@ -6,16 +6,14 @@ const isFront = document.body.classList.contains("front-page");
 
 const lightModeOn = (event) => {
     navbar.classList.add("navbar-light");
-
 }
 
 const lightModeOff = (event) => {
     navbar.classList.remove("navbar-light");
-
 }
 
 const changeNavHeight = (height) => {
-navbar.style.height = height;
+    navbar.style.height = height;
 }
 
 const openMenu = (event) => {  // функция открывания меню
@@ -106,41 +104,39 @@ const swiperBlog = new Swiper(".blog-slider", {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    let currentModal;
-    let modalDialog
-    let alertModal = document.querySelector("#alert-modal")
+    let currentModal = null;
 
-const modalButtons = document.querySelectorAll("[data-toggle=modal]")
+    const modalButtons = document.querySelectorAll("[data-toggle=modal]")
 
-
-modalButtons.forEach((button) => {
-  /*клик по переключателю*/
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    /*определяем текущее открытое окно*/
-    const currentModal = document.querySelector(button.dataset.target);
-    /* открываем текущее окно */
-    currentModal.classList.toggle("is-open");
-    /* открываем диалоговое окно*/
-    const modalDialog = currentModal.querySelector(".modal-dialog");
-    /* отслеживаем клик по окну и пустым областям */
-    currentModal.addEventListener("click", (event) => {
-      /* если клик в пустую область (не диалог) */
-      if (!event.composedPath().includes(modalDialog)) {
-        /* закрываем окно */
-        currentModal.classList.remove("is-open");
-      }
+    modalButtons.forEach((button) => {
+        /*клик по переключателю*/
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            /*определяем текущее открытое окно*/
+            currentModal = document.querySelector(button.dataset.target);
+            /* открываем текущее окно */
+            currentModal.classList.toggle("is-open");
+            /* открываем диалоговое окно*/
+            const modalDialog = currentModal.querySelector(".modal-dialog");
+            /* отслеживаем клик по окну и пустым областям */
+            currentModal.addEventListener("click", (event) => {
+                /* если клик в пустую область (не диалог) */
+                if (!event.composedPath().includes(modalDialog)) {
+                    /* закрываем окно */
+                    currentModal.classList.remove("is-open");
+                }
+            });
+        });
     });
-  });
-});
-/* ловим событие  нажатия на кнопку */
-document.addEventListener("keyup", (event) => {
-  /* проверяем, что за Escape и текущее окно открыто */
-    if(event.key == "Escape" && currentModal.classList.contains("is-open")) {
-      /*закрываем текущее окно*/
-      currentModal.classList.toggle("is-open");
-    }
-})
+    
+    /* ловим событие  нажатия на кнопку */
+    document.addEventListener("keyup", (event) => {
+        /* проверяем, что за Escape и текущее окно открыто */
+        if(event.key == "Escape" && currentModal && currentModal.classList.contains("is-open")) {
+            /*закрываем текущее окно*/
+            currentModal.classList.remove("is-open");
+        }
+    });
 });
 
 const forms = document.querySelectorAll("form");
